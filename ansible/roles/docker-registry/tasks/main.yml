@@ -1,0 +1,8 @@
+---
+# Configure a Docker Registry host
+
+- name: Install Docker prerequisites
+  include: prereqs.yml
+
+- name: Install Docker Registry
+  include: registry.yml

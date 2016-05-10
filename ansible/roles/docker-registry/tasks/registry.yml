@@ -1,0 +1,70 @@
+---
+# Configure the actual Docker Registry
+
+- stat: path=/data/docker-registry/registry
+  register: docker_registry_storage
+
+- stat: path=/data/docker-registry/auth
+  register: registry_auth_dir
+
+- name: Create Docker Registry storage if it's missing
+  file:
+    path: /data/docker-registry/registry
+    state: directory
+    mode: 0750
+  when: not docker_registry_storage.stat.exists
+
+- name: Create the certs and auth directory if it's missing
+  file:
+    path: /data/docker-registry/auth
+    state: directory
+    mode: 0750
+  when: not registry_auth_dir.stat.exists
+
+- name: Add self-signed INSECURE certificate
+  copy:
+    src: cert.template
+    dest: /data/docker-registry/auth/dockerreg.crt
+    mode: 0600
+    owner: root
+    group: root
+
+- name: Add self-signed INSECURE key
+  copy:
+    src: key.template
+    dest: /data/docker-registry/auth/dockerreg.key
+    mode: 0600
+    owner: root
+    group: root
+
+- name: Copy over the bcrypt htpasswd file
+  copy:
+    src: htpasswd
+    dest: /data/docker-registry/auth/htpasswd
+    mode: 0600
+    owner: root
+    group: root
+
+- name: Ensure Docker Registry is running
+  docker:
+    image: "registry:2"
+    name: registry
+    registry: hub.docker.com
+    ports:
+     - "443:5000"
+    env:
+      REGISTRY_HTTP_SECRET: dockercluster
+      REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /registry
+      REGISTRY_HTTP_TLS_CERTIFICATE: /auth/dockerreg.crt
+      REGISTRY_HTTP_TLS_KEY: /auth/dockerreg.key
+      REGISTRY_AUTH: htpasswd
+      REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
+      REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
+    volumes:
+      - /data/docker-registry/registry:/registry:rw
+      - /data/docker-registry/auth:/auth:ro
+    privileged: yes
+    state: reloaded
+    pull: missing
+    restart_policy: always
+  register: start_registry

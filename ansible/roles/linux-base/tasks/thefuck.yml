@@ -1,0 +1,21 @@
+---
+# Install thefuck, its prerequisites and our custom rules for it
+
+- name: Add the requirements to install things with pip
+  apt: name={{ item }} state=present
+  with_items:
+    - python-dev
+    - python-pip
+
+- name: Install thefuck
+  pip: name=thefuck state=present
+
+- name: Create root's custom thefuck rules directory
+  file: path=/root/.thefuck/rules state=directory owner=root group=root mode=0750 recurse=yes
+
+- name: Checkout our custom rules from git for root
+  git:
+    repo: https://github.com/ahrenstein/thefuck-rules.git
+    dest: /root/.thefuck/rules
+    force: yes
+    depth: 1

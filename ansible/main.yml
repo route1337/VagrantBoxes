@@ -1,0 +1,34 @@
+---
+
+- hosts: linux
+  user: vagrant
+  become: true
+  become_user: root
+  become_method: sudo
+  roles:
+    - linux-base
+    - vagrant-specific
+
+- hosts: boxybrown
+  user: vagrant
+  become: true
+  become_user: root
+  become_method: sudo
+  roles:
+    - boxybrown
+
+- hosts: dockerregistries
+  user: vagrant
+  become: true
+  become_user: root
+  become_method: sudo
+  roles:
+    - docker-registry
+
+- hosts: dockerhosts
+  user: vagrant
+  become: true
+  become_user: root
+  become_method: sudo
+  roles:
+    - docker-host

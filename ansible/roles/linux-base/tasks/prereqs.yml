@@ -1,0 +1,42 @@
+---
+# Manage packages that should be added or removed
+- name: Refresh apt cache
+  apt: update_cache=yes
+
+- name: Remove unused packages
+  apt: name={{ item }} state=absent purge=yes
+  with_items:
+    - landscape-client-ui
+    - landscape-client-ui-install
+    - landscape-client
+    - landscape-common
+    - update-motd
+
+- name: Add the usual packages
+  apt: name={{ item }} state=present
+  with_items:
+    - bmon
+    - vim
+    - curl
+    - gnupg2
+    - atop
+    - git
+
+- name: Configure timezone to EST
+  copy:
+    src: ESTtimezone
+    dest: /etc/timezone
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - reconfigure timezone
+
+- name: Make sure the /opt directory exists
+  file:
+    path: /opt
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+

@@ -1,0 +1,79 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  ### Docker Registry
+
+  config.vm.define :dockerreg do |dockerreg|
+
+    dockerreg.vm.box = "ubuntu/trusty64"
+    dockerreg.vm.hostname = "dockerreg.vg.route1337.com"
+
+    # virtualbox VM parameters (RAM, CPU etc)
+    dockerreg.vm.provider "virtualbox" do |vb|
+      vb.memory = 1024
+      vb.cpus = 1
+    end
+
+    # Private networking - so machines can speak to each other:
+    dockerreg.vm.network :private_network, ip: "192.168.33.31"
+
+    # Provision with Ansible at the end of the deploy
+    dockerreg.vm.provision :ansible do |ansible|
+      ansible.inventory_path = "../../ansible/vagrant.inv"
+      ansible.playbook = "../../ansible/main.yml"
+      ansible.limit = "192.168.33.31"
+    end
+
+  end
+
+  ### Docker Host 1
+
+  config.vm.define :dockerhost1 do |dockerhost1|
+
+    dockerhost1.vm.box = "ubuntu/trusty64"
+    dockerhost1.vm.hostname = "dockerhost1.vg.route1337.com"
+
+    # virtualbox VM parameters (RAM, CPU etc)
+    dockerhost1.vm.provider "virtualbox" do |vb|
+      vb.memory = 3072
+      vb.cpus = 2
+    end
+
+    # Private networking - so machines can speak to each other:
+    dockerhost1.vm.network :private_network, ip: "192.168.33.32"
+
+    # Provision with Ansible at the end of the deploy
+    dockerhost1.vm.provision :ansible do |ansible|
+      ansible.inventory_path = "../../ansible/vagrant.inv"
+      ansible.playbook = "../../ansible/main.yml"
+      ansible.limit = "192.168.33.32"
+    end
+
+  end
+
+  ### Docker Host 2
+
+  config.vm.define :dockerhost2 do |dockerhost2|
+
+    dockerhost2.vm.box = "ubuntu/trusty64"
+    dockerhost2.vm.hostname = "dockerhost2.vg.route1337.com"
+
+    # virtualbox VM parameters (RAM, CPU etc)
+    dockerhost2.vm.provider "virtualbox" do |vb|
+      vb.memory = 3072
+      vb.cpus = 2
+    end
+
+    # Private networking - so machines can speak to each other:
+    dockerhost2.vm.network :private_network, ip: "192.168.33.33"
+
+    # Provision with Ansible at the end of the deploy
+    dockerhost2.vm.provision :ansible do |ansible|
+      ansible.inventory_path = "../../ansible/vagrant.inv"
+      ansible.playbook = "../../ansible/main.yml"
+      ansible.limit = "192.168.33.33"
+    end
+  end
+end

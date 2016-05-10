@@ -1,0 +1,43 @@
+---
+# Configure the prerequisites for a Docker Registry host
+
+- name: Add the Docker repository GPG key
+  apt_key:
+    keyserver: "hkp://p80.pool.sks-keyservers.net:80"
+    id: 58118E89F3A912897C070ADBF76221572C52609D
+
+- name: Add the Docker repository
+  apt_repository:
+    repo: 'deb https://apt.dockerproject.org/repo ubuntu-trusty main'
+    state: present
+
+- name: Refresh apt cache
+  apt:
+    update-cache: yes
+
+- name: Install Docker itself
+  apt: name={{ item }} state=present
+  with_items:
+    - docker-engine
+
+- name: Install the prerequisites for Docker Registry
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: yes
+  with_items:
+    - python-dev
+    - python-setuptools
+    - python-pip
+    - openssl
+    - linux-image-extra-virtual # https://github.com/docker/docker/issues/15825
+
+- name: Install required python packages
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - docker-py
+    - six
+    - setuptools
+    - passlib

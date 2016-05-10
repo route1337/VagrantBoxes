@@ -1,0 +1,19 @@
+---
+# Configure the actual Docker container host
+
+- name: Configure Docker to allow INSECURE certs from the registry
+  copy:
+    src: docker.default
+    dest: /etc/default/docker
+    mode: 0644
+    owner: root
+    group: root
+    force: yes
+
+- name: Restart Docker to allow the change to take effect
+  service:
+    name: docker
+    state: restarted
+
+- name: Authenticate the root user to the Docker Registry
+  command: /usr/bin/docker login -e docker@docker.com -u route -p onethreethreeseven dockerreg.vg.route1337.com
