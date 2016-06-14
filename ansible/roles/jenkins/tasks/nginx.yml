@@ -1,0 +1,21 @@
+---
+
+- name: Install NginX
+  apt:
+    name: nginx
+    state: latest
+
+- name: Remove the default NginX site
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+
+- name: Deploy the Jenkins proxy config
+  copy:
+    src: jenkins.conf
+    dest: /etc/nginx/sites-enabled/jenkins.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart nginx

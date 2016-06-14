@@ -1,0 +1,7 @@
+---
+
+- name: Setup Jenkins
+  include: jenkins.yml
+
+- name: Setup NginX to put Jenkins on port 80
+  include: nginx.yml

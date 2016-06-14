@@ -32,3 +32,11 @@
   become_method: sudo
   roles:
     - docker-host
+
+- hosts: jenkins
+  user: vagrant
+  become: true
+  become_user: root
+  become_method: sudo
+  roles:
+    - jenkins
