@@ -38,7 +38,7 @@ The following tweaks are performed via Ansible provisioning:
   7. Nicer bash prompt
   8. Allow root to SSH in with password
   9. Matt's custom thefuck rules
-5. Custom BoxyBrown motd file
+4. Custom BoxyBrown motd file
 
 
 Shared Directories (These may not work on Windows)
