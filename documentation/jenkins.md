@@ -1,12 +1,12 @@
-BoxyBrown
-==============
-BoxyBrown is a generic ubuntu/trusty64 image with a few tweaks made via Ansible 
+Jenkins
+=======
+Jenkins is a generic ubuntu/trusty64 image with the latest LTS release of Jenkins installed and an NginX proxy to get it on port 80.
 
 Box Configuration
 ------------
 | Operating System | IP Address    | DNS Name                          | Vagrant Provider | RAM | CPUs |
 |:----------------:|:-------------:|:---------------------------------:|:----------------:|:---:|:----:|
-| Ubuntu 14.04 x64 | 192.168.33.30 | boxybrown.vg.route1337.com        | Virtualbox       | 2GB | 2    |
+| Ubuntu 14.04 x64 | 192.168.33.34 | jenkins.vg.route1337.com          | Virtualbox       | 2GB | 2    |
 
 Tweaks Performed by Ansible
 ------------
@@ -38,12 +38,13 @@ The following tweaks are performed via Ansible provisioning:
   7. Nicer bash prompt
   8. Allow root to SSH in with password
   9. Matt's custom thefuck rules
-4. Custom BoxyBrown motd file
+4. Jenkins installation
+  1. Add the official Jenkins repository
+  2. Install the latest Jenkins LTS with all the default settings and credentials
+  3. Install NginX and configure it to proxy Jenkins over port 80
 
-
-Shared Directories (These may not work on Windows)
-------------
-1. /Scratch will appear on the VM as /scratch
-2. ~/Downloads will appear on the VM as /downloads
+Jenkins Defaults
+----------------
+Jenkins runs on port 8080 with no credentials by default but it's proxied via NginX to port 80.
 
 [Back to main README](../README.md)

@@ -1,0 +1,25 @@
+---
+
+- name: Add Jenkins apt key
+  apt_key:
+    url: http://pkg.jenkins.io/debian/jenkins.io.key
+    state: present
+
+- name: Add Jenkins LTS repo
+  apt_repository:
+    repo: "deb http://pkg.jenkins.io/debian-stable binary/"
+    state: present
+  notify:
+    - refresh apt
+
+# Jenkins attempts to install before the openjdk-7-jre-headless package and then fails to start.
+# This puts things in the correct order
+- name: Install Java 7 Headless
+  apt:
+    name: openjdk-7-jre-headless
+    state: installed
+
+- name: Install Jenkins LTS
+  apt:
+    name: jenkins
+    state: latest
