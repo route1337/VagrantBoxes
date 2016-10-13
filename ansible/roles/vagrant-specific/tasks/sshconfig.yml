@@ -1,6 +1,13 @@
 ---
 
-- name: Deploy SSH Server config
+- name: Deploy SSH Server config for Ubuntu
   copy: src=sshd_config dest=/etc/ssh/sshd_config owner=root group=root mode=0644
+  when: ansible_distribution == 'Ubuntu'
   notify:
-    - restart ssh
+    - ubuntu restart ssh
+
+- name: Deploy SSH Server config for CentOS
+  copy: src=sshd_config dest=/etc/ssh/sshd_config owner=root group=root mode=0644
+  when: ansible_distribution == 'Ubuntu'
+  notify:
+    - centos restart ssh

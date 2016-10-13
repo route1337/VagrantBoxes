@@ -6,7 +6,8 @@
   become_user: root
   become_method: sudo
   roles:
-    - linux-base
+    - ubuntu-base
+    - centos-base
     - vagrant-specific
 
 - hosts: boxybrown

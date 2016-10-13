@@ -1,0 +1,6 @@
+---
+# Handlers used for various tasks in linux-base
+
+# Handlers for prereqs
+- name: centos reconfigure timezone
+  command: date

@@ -30,7 +30,7 @@
     group: root
     mode: 0644
   notify:
-    - reconfigure timezone
+    - ubuntu reconfigure timezone
 
 - name: Make sure the /opt directory exists
   file:
