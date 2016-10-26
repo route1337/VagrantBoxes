@@ -10,6 +10,8 @@
     - gnupg2
     - atop
     - git
+    - lsof
+    - telnet
 
 - name: Configure timezone to EST
   file:
