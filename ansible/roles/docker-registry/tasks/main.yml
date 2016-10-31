@@ -3,6 +3,8 @@
 
 - name: Install Docker prerequisites
   include: prereqs.yml
+  when: ansible_distribution == 'Ubuntu'
 
 - name: Install Docker Registry
   include: registry.yml
+  when: ansible_distribution == 'Ubuntu'

@@ -1,4 +1,7 @@
 ---
 
-- name: restart ssh
+- name: ubuntu restart ssh
   service: name=ssh state=restarted
+
+- name: centos restart ssh
+  service: name=sshd state=restarted

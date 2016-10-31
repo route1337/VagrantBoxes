@@ -10,7 +10,6 @@ At this time I can only provide access to these boxes if you are working directl
 1. fusion-mavericks
 2. fusion-yosemite
 3. fusion-elcapitan
-4. fusion-sierra
   
 Restricted Boxes 
 ------------

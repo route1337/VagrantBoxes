@@ -1,0 +1,11 @@
+---
+# Set up the basic requirements and settings of all Ubuntu servers
+
+- include: prereqs.yml
+  when: ansible_distribution == 'Ubuntu'
+- include: thefuck.yml
+  when: ansible_distribution == 'Ubuntu'
+- include: bash.yml
+  when: ansible_distribution == 'Ubuntu'
+- include: rootuser.yml
+  when: ansible_distribution == 'Ubuntu'

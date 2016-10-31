@@ -13,7 +13,7 @@
     - update-motd
 
 - name: Add the usual packages
-  apt: name={{ item }} state=present
+  apt: name={{ item }} state=latest
   with_items:
     - bmon
     - vim
@@ -30,7 +30,7 @@
     group: root
     mode: 0644
   notify:
-    - reconfigure timezone
+    - ubuntu reconfigure timezone
 
 - name: Make sure the /opt directory exists
   file:

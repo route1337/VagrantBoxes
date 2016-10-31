@@ -1,7 +1,0 @@
----
-# Set up the basic requirements and settings of all linux servers
-
-- include: prereqs.yml
-- include: thefuck.yml
-- include: bash.yml
-- include: rootuser.yml
