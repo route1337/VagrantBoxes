@@ -12,6 +12,7 @@
     - git
     - lsof
     - telnet
+    - net-tools
 
 - name: Configure timezone to EST
   file:
