@@ -1,7 +1,7 @@
 Fusion-Sierra
 =============
 This box contains a basic installation of macOS Sierra 10.12.0 with Ansible pre-installed.
-This box exists for testing macOS applications and other Mac specific code but due to macOS's licensing I am unable to share access to the box itself.
+This box exists for testing macOS applications and other Mac specific code but due to macOS's licensing the box file itself is unable to be shared directly.
 
 Box Configuration
 ------------

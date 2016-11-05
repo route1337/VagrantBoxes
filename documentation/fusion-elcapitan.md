@@ -1,7 +1,7 @@
 Fusion-ElCapitan
 ==============
 This box contains a basic installation of OS X El Capitan 10.11.6 with Ansible pre-installed.
-This box exists for testing OS X applications and other Mac specific code but due to OS X's licensing I am unable to share access to the box itself.
+This box exists for testing OS X applications and other Mac specific code but due to OS X's licensing the box file itself is unable to be shared directly.
 
 Box Configuration
 ------------

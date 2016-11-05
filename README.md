@@ -1,6 +1,6 @@
-Matthew Ahrenstein's Vagrant Boxes
+Route 1337 Vagrant Boxes
 ==================================
-This repository contains various Vagrant boxes I use for testing and development. The configuration for these boxes has been open sourced for the DevOps community to use. 
+This repository contains various Vagrant boxes used for testing and development. The configuration for these boxes has been open sourced for the DevOps community to use. 
 
 Public Boxes
 ------------
