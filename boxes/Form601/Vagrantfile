@@ -1,0 +1,29 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.vm.define :form601 do |form601|
+
+    form601.vm.box = "form601"
+    form601.vm.hostname = "form601.vg.route1337.com"
+    form601.vm.box_url = "http://vg.route1337.com/form601.json"
+    form601.vm.guest = :windows
+    form601.vm.communicator = "winrm"
+    form601.winrm.username = "vagrant"
+    form601.vm.hostname = "form601"
+    form601.winrm.timeout = 30
+    form601.vm.boot_timeout = 30
+
+    # virtualbox VM parameters (RAM, CPU etc)
+    form601.vm.provider "virtualbox" do |vb|
+      vb.gui = true
+      vb.memory = 1024
+      vb.cpus = 1
+    end
+
+    # There is no WinRM in XP so we can't configure private networking
+
+    # No Ansible Provisioning
+  end
+end
