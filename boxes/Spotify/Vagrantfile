@@ -1,0 +1,33 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+
+Vagrant.configure(2) do |config|
+
+  config.vm.define :spotify do |spotify|
+
+    spotify.vm.box = "spotify"
+    spotify.vm.box_url = "http://vg.route1337.com/spotify.json"
+    spotify.vm.hostname = "spotify.vg.route1337.com"
+    spotify.vm.guest = :windows
+    spotify.vm.communicator = "winrm"
+    spotify.winrm.username = "vagrant"
+    spotify.vm.hostname = "spotify"
+    spotify.winrm.timeout = 600
+    spotify.vm.boot_timeout = 600
+
+    # virtualbox VM parameters (RAM, CPU etc)
+    spotify.vm.provider "virtualbox" do |vb|
+      # Don't boot with headless mode
+      vb.gui = true
+      vb.name = "spotify-box"
+      vb.cpus = 2
+      vb.memory = 2048
+    end
+
+    # Private networking - so machines can speak to each other:
+    spotify.vm.network :private_network, ip: "192.168.33.51"
+
+    # No Ansible Provisioning
+  end
+end
