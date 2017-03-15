@@ -20,6 +20,8 @@ Vagrant.configure(2) do |config|
     spotify.vm.provider "virtualbox" do |vb|
       # Don't boot with headless mode
       vb.gui = true
+      # Add CoreAudio with Intel HD Audio
+      vb.customize ["modifyvm", :id, '--audio', 'coreaudio', '--audiocontroller', 'hda']
       vb.name = "spotify-box"
       vb.cpus = 2
       vb.memory = 2048
