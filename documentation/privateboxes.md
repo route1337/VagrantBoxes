@@ -17,6 +17,5 @@ Restricted Boxes
 The following boxes will not be shared with anyone due to their high potential for abuse.
 
 1. DeDRM
-2. Spotify
 
 [Back to main README](../README.md)
