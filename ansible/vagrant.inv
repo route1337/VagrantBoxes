@@ -18,11 +18,20 @@
 dockerregistries
 dockerhosts
 
-[linux:children]
+[ubuntu:children]
 boxybrown
 dockercluster
 jenkins
+
+[centos:children]
 centos7
+
+[linux:children]
+centos
+ubuntu
 
 [all:children]
 linux
+
+[ubuntu:vars]
+ansible_python_interpreter=/usr/bin/python3

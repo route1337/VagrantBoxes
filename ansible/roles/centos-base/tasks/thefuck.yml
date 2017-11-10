@@ -6,21 +6,29 @@
   with_items:
     - gcc
 
+- name: Add build requirements
+  yum: name={{ item }} state=present
+  with_items:
+    - gcc
+
 - name: Add the requirements to install things with pip
   yum: name={{ item }} state=present
   with_items:
-    - python-devel
-    - python-pip
+    - python34-devel
+    - python34-pip
 
 - name: Install thefuck
-  pip: name=thefuck state=present
+  pip:
+    name: thefuck
+    state: present
+    executable: pip3
 
 - name: Create root's custom thefuck rules directory
-  file: path=/root/.thefuck/rules state=directory owner=root group=root mode=0750 recurse=yes
+  file: path=/root/.config/thefuck/rules state=directory owner=root group=root mode=0750 recurse=yes
 
 - name: Checkout my custom rules from git for root
   git:
     repo: https://github.com/ahrenstein/thefuck-rules.git
-    dest: /root/.thefuck/rules
+    dest: /root/.config/thefuck/rules
     force: yes
     depth: 1

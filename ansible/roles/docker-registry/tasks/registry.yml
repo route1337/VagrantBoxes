@@ -45,11 +45,14 @@
     owner: root
     group: root
 
+- name: Pull Docker Registry from Docker Hub
+  docker_image:
+    name: registry
+
 - name: Ensure Docker Registry is running
   docker:
-    image: "registry:2"
+    image: "registry"
     name: registry
-    registry: hub.docker.com
     ports:
      - "443:5000"
     env:

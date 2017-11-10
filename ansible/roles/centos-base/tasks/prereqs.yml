@@ -1,18 +1,43 @@
 ---
 # Manage packages that should be added or removed
 
+- name: Check if EPEL repo is already configured.
+  stat: path="/etc/yum.repos.d/epel.repo"
+  register: epel_repofile_result
+
+- name: Install EPEL repo.
+  yum:
+    name: "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm"
+    state: present
+  register: result
+  until: '"failed" not in result'
+  retries: 5
+  delay: 10
+  when: (not epel_repofile_result.stat.exists) and (ansible_os_family == 'RedHat')
+
+- name: Import EPEL GPG key.
+  rpm_key:
+    key: "/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}"
+    state: present
+  when: (not epel_repofile_result.stat.exists) and (ansible_os_family == 'RedHat')
+
 - name: Add the usual packages
   yum: name={{ item }} state=latest
   with_items:
-    - bmon
-    - vim
+    - vim-enhanced
     - curl
+    - htop
     - gnupg2
-    - atop
     - git
     - lsof
     - telnet
     - net-tools
+    - bmon
+    - atop
+    - wget
+    - python-pip
+    - python34-pip
+    - unzip
 
 - name: Configure timezone to EST
   file:
@@ -31,3 +56,14 @@
     group: root
     mode: 0755
 
+- name: Install required python packages # Required for grabbing files from sites hosted with SNI
+  pip:
+    name: '{{ item }}'
+    state: present
+    executable: /bin/pip # Force python2.7
+  when: ansible_os_family == 'RedHat'
+  with_items:
+    - urllib3
+    - pyopenssl
+    - ndg-httpsclient
+    - pyasn1
