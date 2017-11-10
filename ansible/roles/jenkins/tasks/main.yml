@@ -1,9 +1,9 @@
 ---
 
 - name: Setup Jenkins
-  include: jenkins.yml
+  import_tasks: jenkins.yml
   when: ansible_distribution == 'Ubuntu'
 
 - name: Setup NginX to put Jenkins on port 80
-  include: nginx.yml
+  import_tasks: nginx.yml
   when: ansible_distribution == 'Ubuntu'

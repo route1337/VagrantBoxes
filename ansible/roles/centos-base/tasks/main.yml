@@ -1,11 +1,11 @@
 ---
 # Set up the basic requirements and settings of all CentOS servers
 
-- include: prereqs.yml
+- import_tasks: prereqs.yml
   when: ansible_distribution == 'CentOS'
-- include: thefuck.yml
+- import_tasks: thefuck.yml
   when: ansible_distribution == 'CentOS'
-- include: bash.yml
+- import_tasks: bash.yml
   when: ansible_distribution == 'CentOS'
-- include: rootuser.yml
+- import_tasks: rootuser.yml
   when: ansible_distribution == 'CentOS'

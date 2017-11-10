@@ -2,9 +2,9 @@
 # Configure a Docker Registry host
 
 - name: Install Docker prerequisites
-  include: prereqs.yml
+  import_tasks: prereqs.yml
   when: ansible_distribution == 'Ubuntu'
 
 - name: Install Docker Registry
-  include: registry.yml
+  import_tasks: registry.yml
   when: ansible_distribution == 'Ubuntu'

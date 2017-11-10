@@ -16,11 +16,16 @@
   apt: name={{ item }} state=latest
   with_items:
     - bmon
+    - htop
     - vim
     - curl
     - gnupg2
     - atop
     - git
+    - molly-guard
+    - python-pip
+    - python3-pip
+    - unzip
 
 - name: Configure timezone to EST
   copy:
@@ -40,3 +45,14 @@
     group: root
     mode: 0755
 
+- name: Install required python packages # Required for grabbing files from sites hosted with SNI
+  pip:
+    name: '{{ item }}'
+    state: present
+    executable: /usr/bin/pip # Force python2.7
+  when: ansible_distribution == 'Ubuntu'
+  with_items:
+    - urllib3
+    - pyopenssl
+    - ndg-httpsclient
+    - pyasn1

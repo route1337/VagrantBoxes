@@ -2,9 +2,9 @@
 # Configure a Docker container host
 
 - name: Install Docker prerequisites
-  include: prereqs.yml
+  import_tasks: prereqs.yml
   when: ansible_distribution == 'Ubuntu'
 
 - name: Configure the Docker host to connect to the Docker Registry
-  include: host.yml
+  import_tasks: host.yml
   when: ansible_distribution == 'Ubuntu'
