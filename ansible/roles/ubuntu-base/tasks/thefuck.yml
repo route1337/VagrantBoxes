@@ -10,6 +10,7 @@
 - name: Install thefuck
   pip:
     name: thefuck
+    version: 3.00
     state: present
     executable: pip3
 
