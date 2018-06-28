@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define :boxybrown do |boxybrown|
 
-    boxybrown.vm.box = "ubuntu/trusty64"
+    boxybrown.vm.box = "ubuntu/bionic64"
     boxybrown.vm.hostname = "boxybrown.vg.route1337.com"
     boxybrown.vm.synced_folder "/Scratch/", "/scratch"
     boxybrown.vm.synced_folder "~/Downloads/", "/downloads"

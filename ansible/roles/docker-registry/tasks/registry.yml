@@ -50,7 +50,7 @@
     name: registry
 
 - name: Ensure Docker Registry is running
-  docker:
+  docker_container:
     image: "registry"
     name: registry
     ports:
@@ -67,7 +67,6 @@
       - /data/docker-registry/registry:/registry:rw
       - /data/docker-registry/auth:/auth:ro
     privileged: yes
-    state: reloaded
-    pull: missing
+    state: started
     restart_policy: always
   register: start_registry

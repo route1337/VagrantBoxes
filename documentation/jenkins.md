@@ -1,12 +1,12 @@
 Jenkins
 =======
-Jenkins is a generic ubuntu/trusty64 image with the latest LTS release of Jenkins installed and an NginX proxy to get it on port 80.
+Jenkins is a generic ubuntu/bionic64 image with the latest LTS release of Jenkins installed and an NginX proxy to get it on port 80.
 
 Box Configuration
 ------------
 | Operating System | IP Address    | DNS Name                          | Vagrant Provider | RAM | CPUs |
 |:----------------:|:-------------:|:---------------------------------:|:----------------:|:---:|:----:|
-| Ubuntu 14.04 x64 | 192.168.33.34 | jenkins.vg.route1337.com          | Virtualbox       | 2GB | 2    |
+| Ubuntu 18.04 x64 | 192.168.33.34 | jenkins.vg.route1337.com          | Virtualbox       | 2GB | 2    |
 
 Tweaks Performed by Ansible
 ------------

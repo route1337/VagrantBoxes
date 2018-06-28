@@ -1,10 +1,19 @@
 ---
 # Configure the actual Docker container host
 
+- name: Make sure the certs directory for the INSECURE cert exists
+  file:
+    path: /etc/docker/certs.d/dockerreg.vg.route1337.com
+    state: directory
+    mode: 0755
+    owner: root
+    group: root
+    recurse: yes
+
 - name: Configure Docker to allow INSECURE certs from the registry
   copy:
-    src: docker.default
-    dest: /etc/default/docker
+    src: cert.template
+    dest: /etc/docker/certs.d/dockerreg.vg.route1337.com/dockerreg.vg.route1337.com.crt
     mode: 0644
     owner: root
     group: root
@@ -16,4 +25,4 @@
     state: restarted
 
 - name: Authenticate the root user to the Docker Registry
-  command: /usr/bin/docker login -e docker@docker.com -u route -p onethreethreeseven dockerreg.vg.route1337.com
+  command: /usr/bin/docker login -u route -p onethreethreeseven dockerreg.vg.route1337.com
