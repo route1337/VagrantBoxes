@@ -6,9 +6,9 @@ Box Configuration
 ------------
 | Operating System | IP Address    | DNS Name                            | Vagrant Provider | RAM | CPUs |
 |:----------------:|:-------------:|:-----------------------------------:|:----------------:|:---:|:----:|
-| Ubuntu 14.04 x64 | 192.168.33.31 | dockerreg.vg.route1337.com          | Virtualbox       | 1GB | 1    |
-| Ubuntu 14.04 x64 | 192.168.33.32 | dockerhost1.vg.route1337.com        | Virtualbox       | 3GB | 2    |
-| Ubuntu 14.04 x64 | 192.168.33.33 | dockerhost2.vg.route1337.com        | Virtualbox       | 3GB | 2    |
+| Ubuntu 18.04 x64 | 192.168.33.31 | dockerreg.vg.route1337.com          | Virtualbox       | 1GB | 1    |
+| Ubuntu 18.04 x64 | 192.168.33.32 | dockerhost1.vg.route1337.com        | Virtualbox       | 3GB | 2    |
+| Ubuntu 18.04 x64 | 192.168.33.33 | dockerhost2.vg.route1337.com        | Virtualbox       | 3GB | 2    |
 
 Tweaks Performed by Ansible
 ------------

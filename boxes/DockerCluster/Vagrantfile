@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define :dockerreg do |dockerreg|
 
-    dockerreg.vm.box = "ubuntu/trusty64"
+    dockerreg.vm.box = "ubuntu/bionic64"
     dockerreg.vm.hostname = "dockerreg.vg.route1337.com"
 
     # virtualbox VM parameters (RAM, CPU etc)
@@ -32,7 +32,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define :dockerhost1 do |dockerhost1|
 
-    dockerhost1.vm.box = "ubuntu/trusty64"
+    dockerhost1.vm.box = "ubuntu/bionic64"
     dockerhost1.vm.hostname = "dockerhost1.vg.route1337.com"
 
     # virtualbox VM parameters (RAM, CPU etc)
@@ -57,7 +57,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define :dockerhost2 do |dockerhost2|
 
-    dockerhost2.vm.box = "ubuntu/trusty64"
+    dockerhost2.vm.box = "ubuntu/bionic64"
     dockerhost2.vm.hostname = "dockerhost2.vg.route1337.com"
 
     # virtualbox VM parameters (RAM, CPU etc)

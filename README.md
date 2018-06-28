@@ -6,13 +6,13 @@ Public Boxes
 ------------
 The following Vagrant boxes are publicly usable without having to seek access to the .box file stored in S3
 
-| Box Name                                         | DNS Name                                         | IP Address                                       | Vagrant Provider   | Description                                                                             | Purpose                                                                   |
-|------------------------------------------------- |--------------------------------------------------|--------------------------------------------------|--------------------|-----------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| [BoxyBrown](documentation/boxybrown.md)          | boxybrown.vg.route1337.com                       | 192.68.33.30                                     | VirtualBox         | A general purpose Ubuntu 14.04 with some customizations                                 | General quick linux testing of various things                             |
-| [IE6](documentation/ie6.md)                      | N/A                                              | NAT DHCP                                         | VirtualBox         | Windows XP with GUI that has Internet Explorer 6 installed                              | Accessing admin UIs that require the legacy browser Internet Explorer 6   |
-| [Docker Cluster](documentation/dockercluster.md) | [Multiple Hosts](documentation/dockercluster.md) | [Multiple Hosts](documentation/dockercluster.md) | VirtualBox         | 3 boxes that run Ubuntu 14.04. One Docker Registry, and 2 hosts                         | Development and testing of Docker containers and/or Docker services       |
-| [Jenkins](documentation/jenkins.md)              | jenkins.vg.route1337.com                         | 192.68.33.34                                     | VirtualBox         | The latest Jenkins LTS running on Ubuntu 14.04 with nginx proxying it to port 80        | Testing Jenkins plugins and integrations                                  |
-| [CentOS7](documentation/centos7.md)              | centos7.vg.route1337.com                         | 192.68.33.35                                     | VirtualBox         | A general purpose CentOS7 with some customizations                                      | General quick linux testing of various things in CentOS 7                 |
+| Box Name                                                 | DNS Name                                             | IP Address                                           | Vagrant Provider   | Description                                                                               | Purpose                                                                   |
+|--------------------------------------------------------- |------------------------------------------------------|------------------------------------------------------|--------------------|-------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| [BoxyBrown](documentation/boxybrown.md)                  | boxybrown.vg.route1337.com                           | 192.68.33.30                                         | VirtualBox         | A general purpose Ubuntu 18.04 with some customizations                                   | General quick linux testing of various things                             |
+| [IE6](documentation/ie6.md)                              | N/A                                                  | NAT DHCP                                             | VirtualBox         | Windows XP with GUI that has Internet Explorer 6 installed                                | Accessing admin UIs that require the legacy browser Internet Explorer 6   |
+| [Docker Cluster](documentation/dockercluster.md)         | [Multiple Hosts](documentation/dockercluster.md)     | [Multiple Hosts](documentation/dockercluster.md)     | VirtualBox         | 3 boxes that run Ubuntu 18.04. One Docker Registry, and 2 hosts                           | Development and testing of Docker containers and/or Docker services       |
+| [Jenkins](documentation/jenkins.md)                      | jenkins.vg.route1337.com                             | 192.68.33.34                                         | VirtualBox         | The latest Jenkins LTS running on Ubuntu 18.04 with nginx proxying it to port 80          | Testing Jenkins plugins and integrations                                  |
+| [CentOS7](documentation/centos7.md)                      | centos7.vg.route1337.com                             | 192.68.33.35                                         | VirtualBox         | A general purpose CentOS7 with some customizations                                        | General quick linux testing of various things in CentOS 7                 |
 
 Note: All DNS names are valid in the route1337.com internet facing zone file. It's easier than editing your hosts file ;)
 
@@ -29,3 +29,14 @@ The following Vagrant boxes require being on certain networks to download becaus
 | [Fusion-Sierra](documentation/fusion-sierra.md)          | sierra.vg.route1337.com              | 192.168.40.33 | VMware Fusion      | A basic macOS Sierra 10.12.0 installation with Ansible preinstalled                                   | Testing Chef/Ansible code against macOS Sierra                                                      |
 
 Note: All DNS names are valid in the route1337.com internet facing zone file. It's easier than editing your hosts file ;)
+
+Donate To Support These Vagrant Boxes
+------------
+Route 1337, LLC operates entirely on donations. If you find these Vagrant boxes useful, please consider donating via one of these methods.
+
+1. Bitcoin: 1CnzzrPh3iirEkLRLiWFKXDV9i5TXHQjE2
+2. Bitcoin Cash: qzcq645swgd87s7t5mmmjcumf4armhtjt5euww5c29
+3. Litecoin: LWYbc9hf5ErJsF874Q3wwmMiASHRWgwrjR
+4. Ethereum: 0x117543aa7a4D704849171cA06568Ece71B111D18
+
+Thank you for your support!

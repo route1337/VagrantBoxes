@@ -12,12 +12,12 @@
   notify:
     - refresh apt
 
-# Jenkins attempts to install before the openjdk-7-jre-headless package and then fails to start.
+# Jenkins attempts to install before the openjdk-8-jre-headless package and then fails to start.
 # This puts things in the correct order
-- name: Install Java 7 Headless
+- name: Install Java 8 Headless
   apt:
-    name: openjdk-7-jre-headless
-    state: installed
+    name: openjdk-8-jre-headless
+    state: present
 
 - name: Install Jenkins LTS
   apt:
