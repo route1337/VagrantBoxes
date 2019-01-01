@@ -7,7 +7,7 @@ Box Configuration
 ------------
 | Operating System | IP Address    | DNS Name                          | Vagrant Provider | RAM | CPUs |
 |:----------------:|:-------------:|:---------------------------------:|:----------------:|:---:|:----:|
-| macOS Sierra     | 192.168.40.33 | sierra.vg.route1337.com           | VMware Fusion    | 3GB | 2    |
+| macOS Sierra     | 192.168.40.30 | sierra.vg.route1337.com           | VMware Fusion    | 3GB | 2    |
 
 Tweaks Performed by Ansible
 ------------
