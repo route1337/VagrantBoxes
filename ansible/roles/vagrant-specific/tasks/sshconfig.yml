@@ -1,4 +1,14 @@
 ---
+#
+# Project:: Vagrant Boxes
+#
+# Copyright 2019, Route 1337, LLC, All Rights Reserved.
+#
+# Maintainers:
+# - Matthew Ahrenstein: matthew@route1337.com
+#
+# See LICENSE
+#
 
 - name: Deploy SSH Server config for Ubuntu
   copy: src=ubuntu_sshd_config dest=/etc/ssh/sshd_config owner=root group=root mode=0644

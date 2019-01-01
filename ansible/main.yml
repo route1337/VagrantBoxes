@@ -1,4 +1,14 @@
 ---
+#
+# Project:: Vagrant Boxes
+#
+# Copyright 2019, Route 1337, LLC, All Rights Reserved.
+#
+# Maintainers:
+# - Matthew Ahrenstein: matthew@route1337.com
+#
+# See LICENSE
+#
 
 - hosts: linux
   user: vagrant
@@ -10,13 +20,13 @@
     - centos-base
     - vagrant-specific
 
-- hosts: boxybrown
+- hosts: javadev
   user: vagrant
   become: true
   become_user: root
   become_method: sudo
   roles:
-    - boxybrown
+    - javadev
 
 - hosts: dockerregistries
   user: vagrant

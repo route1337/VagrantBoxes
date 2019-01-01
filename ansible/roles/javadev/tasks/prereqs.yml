@@ -1,0 +1,52 @@
+---
+#
+# Project:: Vagrant Boxes
+#
+# Copyright 2019, Route 1337, LLC, All Rights Reserved.
+#
+# Maintainers:
+# - Matthew Ahrenstein: matthew@route1337.com
+#
+# See LICENSE
+#
+
+- name: Add the Oracle Java repository
+  apt_repository:
+    repo: ppa:webupd8team/java
+    filename: "oracle-java"
+    state: present
+
+- name: Add the git-lfs repository
+  apt_repository:
+    repo: ppa:git-core/ppa
+    state: present
+
+- name: Update APT package cache
+  apt:
+    update_cache: yes
+
+- name: Autoaccept license for Java
+  debconf:
+    name: 'oracle-java8-installer'
+    question: 'shared/accepted-oracle-license-v1-1'
+    value: 'true'
+    vtype: 'select'
+
+- name: Install Oracle Java as default
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+  - oracle-java8-installer
+  - oracle-java8-set-default
+
+- name: Install Maven
+  apt:
+    name: maven
+    state: present
+
+- name: Install git-lfs
+  apt:
+    name: git-lfs
+    state: present
+

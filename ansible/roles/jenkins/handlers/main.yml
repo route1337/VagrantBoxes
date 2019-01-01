@@ -1,4 +1,15 @@
 ---
+#
+# Project:: Vagrant Boxes
+#
+# Copyright 2019, Route 1337, LLC, All Rights Reserved.
+#
+# Maintainers:
+# - Matthew Ahrenstein: matthew@route1337.com
+#
+# See LICENSE
+#
+
 # Handlers necessary for jenkins server configuration
 
 - name: refresh apt

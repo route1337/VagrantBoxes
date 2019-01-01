@@ -10,8 +10,7 @@
 # See LICENSE
 #
 
-# Handlers used for various tasks in centos-base
-
-# Handlers for prereqs
-- name: centos reconfigure timezone
-  command: date
+- name: Call prerequisites
+  include: prereqs.yml
+- name: Install Tomcat 8.6
+  include: tomcat85.yml
