@@ -19,7 +19,7 @@ dockerregistries
 dockerhosts
 
 [ubuntu:children]
-boxybrown
+javadev
 dockercluster
 jenkins
 
