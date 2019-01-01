@@ -5,12 +5,9 @@ They are included included in this repo because they are used quite regularly by
 
 Requesting S3 access to private boxes 
 -------------------------------------
-At this time Matt can only provide access to these boxes if you are working directly with him on a project. If you think you should have access to one or more of these boxes then reach out to him on Hangouts or via E-mail.
+At this time Route 1337 can only provide access to these boxes if you are working directly with us on a project. If you think you should have access to one or more of these boxes then reach out to us on Hangouts or via E-mail.
 
-1. fusion-mavericks
-2. fusion-yosemite
-3. fusion-elcapitan
-4. fusion-sierra
+1. N/A
   
 Restricted Boxes 
 ------------
