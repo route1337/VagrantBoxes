@@ -1,4 +1,15 @@
 ---
+#
+# Project:: Vagrant Boxes
+#
+# Copyright 2019, Route 1337, LLC, All Rights Reserved.
+#
+# Maintainers:
+# - Matthew Ahrenstein: matthew@route1337.com
+#
+# See LICENSE
+#
+
 # Manage the tweaks to bashrc
 
 #- name: Remove root user's bash_profile

@@ -1,5 +1,15 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+#
+# Project:: Vagrant Boxes
+#
+# Copyright 2019, Route 1337, LLC, All Rights Reserved.
+#
+# Maintainers:
+# - Matthew Ahrenstein: matthew@route1337.com
+#
+# See LICENSE
+#
 
 Vagrant.configure("2") do |config|
 
