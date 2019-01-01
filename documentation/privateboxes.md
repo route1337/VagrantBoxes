@@ -7,7 +7,7 @@ Requesting S3 access to private boxes
 -------------------------------------
 At this time Route 1337 can only provide access to these boxes if you are working directly with us on a project. If you think you should have access to one or more of these boxes then reach out to us on Hangouts or via E-mail.
 
-1. fusion-sierra
+1. N/A
   
 Restricted Boxes 
 ------------
