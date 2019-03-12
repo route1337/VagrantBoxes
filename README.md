@@ -11,7 +11,6 @@ The following Vagrant boxes are publicly usable without having to seek access to
 | [JavaDev](documentation/javadev.md)                      | javadev.vg.route1337.com                             | 192.68.33.30                                         | VirtualBox         | A general purpose Ubuntu 18.04 box with git=lfs and java dev tools                        | General quick linux testing of various things and building WARs           |
 | [Docker Cluster](documentation/dockercluster.md)         | [Multiple Hosts](documentation/dockercluster.md)     | [Multiple Hosts](documentation/dockercluster.md)     | VirtualBox         | 3 boxes that run Ubuntu 18.04. One Docker Registry, and 2 hosts                           | Development and testing of Docker containers and/or Docker services       |
 | [Jenkins](documentation/jenkins.md)                      | jenkins.vg.route1337.com                             | 192.68.33.34                                         | VirtualBox         | The latest Jenkins LTS running on Ubuntu 18.04 with nginx proxying it to port 80          | Testing Jenkins plugins and integrations                                  |
-| [CentOS7](documentation/centos7.md)                      | centos7.vg.route1337.com                             | 192.68.33.35                                         | VirtualBox         | A general purpose CentOS7 with some customizations                                        | General quick linux testing of various things in CentOS 7                 |
 
 Note: All DNS names are valid in the route1337.com internet facing zone file. It's easier than editing your hosts file ;)
 
@@ -27,6 +26,9 @@ Note: All DNS names are valid in the route1337.com internet facing zone file. It
 
 Donate To Support These Vagrant Boxes
 ------------
-Route 1337, LLC operates entirely on donations. If you find these scripts useful, please consider [contacting us](https://www.route1337.com/contact-us/) about how to donate.
+Route 1337, LLC operates entirely on donations. If you find these Vagrant boxes useful, please consider donating via one of these methods:
 
-Thank you for your support!
+1. Bitcoin: 33nCBCfusCJm6HNPjvs294gNFjx9kTWkaX
+2. Bitcoin Cash: 1DvTTjGoTwZm3bBEPn8x4iKwAATtK7CQMd
+3. Litecoin: ME8jNXXxcQ7sZi77yaMCX5MfCFjhaaafsW
+4. Ethereum: 0x164aCa9c678FC020691feee422aa1CBA2a2F4a1f
