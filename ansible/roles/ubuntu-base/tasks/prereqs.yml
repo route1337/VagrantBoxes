@@ -12,31 +12,39 @@
 
 # Manage packages that should be added or removed
 - name: Refresh apt cache
-  apt: update_cache=yes
+  apt:
+    update_cache: yes
 
 - name: Remove unused packages
-  apt: name={{ item }} state=absent purge=yes
-  with_items:
-    - landscape-client-ui
-    - landscape-client-ui-install
-    - landscape-client
-    - landscape-common
-    - update-motd
+  apt:
+    name: "{{ packages }}"
+    state: absent
+    purge: yes
+  vars:
+    packages:
+      - landscape-client-ui
+      - landscape-client-ui-install
+      - landscape-client
+      - landscape-common
+      - update-motd
 
 - name: Add the usual packages
-  apt: name={{ item }} state=latest
-  with_items:
-    - bmon
-    - htop
-    - vim
-    - curl
-    - gnupg2
-    - atop
-    - git
-    - molly-guard
-    - python-pip
-    - python3-pip
-    - unzip
+  apt:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - bmon
+      - htop
+      - vim
+      - curl
+      - gnupg2
+      - atop
+      - git
+      - molly-guard
+      - python-pip
+      - python3-pip
+      - unzip
 
 - name: Configure timezone to EST
   copy:
@@ -58,12 +66,13 @@
 
 - name: Install required python packages # Required for grabbing files from sites hosted with SNI
   pip:
-    name: '{{ item }}'
+    name: '{{ packages }}'
     state: present
     executable: /usr/bin/pip # Force python2.7
   when: ansible_distribution == 'Ubuntu'
-  with_items:
-    - urllib3
-    - pyopenssl
-    - ndg-httpsclient
-    - pyasn1
+  vars:
+    packages:
+      - urllib3
+      - pyopenssl
+      - ndg-httpsclient
+      - pyasn1

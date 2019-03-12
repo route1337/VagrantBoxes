@@ -13,10 +13,22 @@
 # Manage the tweaks to bashrc
 
 - name: Remove root user's bashrc
-  file: path=/root/.bashrc state=absent
+  file:
+    path: /root/.bashrc
+    state: absent
 
 - name: Deploy the custom bashrc
-  copy: src=bash.bashrc dest=/etc/bash.bashrc owner=root group=root mode=0644
+  copy:
+    src: bash.bashrc
+    dest: /etc/bash.bashrc
+    owner: root
+    group: root
+    mode: 0644
 
 - name: Deploy the custom git script for bashrc
-  copy: src=git.bash dest=/opt/git.bash owner=root group=root mode=0644
+  copy:
+    src: git.bash
+    dest: /opt/git.bash
+    owner: root
+    group: root
+    mode: 0644

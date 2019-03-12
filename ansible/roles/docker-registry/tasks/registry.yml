@@ -12,10 +12,14 @@
 
 # Configure the actual Docker Registry
 
-- stat: path=/data/docker-registry/registry
+- name: Register registry storage dir
+  stat:
+    path: /data/docker-registry/registry
   register: docker_registry_storage
 
-- stat: path=/data/docker-registry/auth
+- name: Register registry auth dir
+  stat:
+    path: /data/docker-registry/auth
   register: registry_auth_dir
 
 - name: Create Docker Registry storage if it's missing

@@ -32,4 +32,4 @@
 - name: Install Jenkins LTS
   apt:
     name: jenkins
-    state: latest
+    state: present
