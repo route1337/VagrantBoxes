@@ -10,4 +10,5 @@
 # See LICENSE
 #
 
-- import_tasks: sshconfig.yml
+- name: Configure SSH for Vagrant
+  import_tasks: sshconfig.yml

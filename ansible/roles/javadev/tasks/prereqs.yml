@@ -34,11 +34,12 @@
 
 - name: Install Oracle Java as default
   apt:
-    name: "{{ item }}"
+    name: "{{ packages }}"
     state: present
-  with_items:
-  - oracle-java8-installer
-  - oracle-java8-set-default
+  vars:
+    packages:
+      - oracle-java8-installer
+      - oracle-java8-set-default
 
 - name: Install Maven
   apt:

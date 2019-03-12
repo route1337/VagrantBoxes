@@ -13,7 +13,7 @@
 - name: Install NginX
   apt:
     name: nginx
-    state: latest
+    state: present
 
 - name: Remove the default NginX site
   file:

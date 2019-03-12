@@ -29,11 +29,6 @@
     owner: root
     group: root
     force: yes
-
-- name: Restart Docker to allow the change to take effect
-  service:
-    name: docker
-    state: restarted
-
-- name: Authenticate the root user to the Docker Registry
-  command: /usr/bin/docker login -u route -p onethreethreeseven dockerreg.vg.route1337.com
+  notify:
+    - restart docker
+    - authenticate to registry

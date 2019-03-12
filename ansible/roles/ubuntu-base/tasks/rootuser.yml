@@ -23,4 +23,7 @@
   - https://github.com/ahrenstein.keys
 
 - name: Configure root password as "vagrant"
-  user: name=root password=$5$jku/VqFgw1C9j$e1BTUBiZx.bXEukPqzkBPD1tc3xC8kJ1xFqqwffdxs9 update_password=always
+  user:
+    name: root
+    password: $5$jku/VqFgw1C9j$e1BTUBiZx.bXEukPqzkBPD1tc3xC8kJ1xFqqwffdxs9
+    update_password: always
