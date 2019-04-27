@@ -10,12 +10,6 @@
 # See LICENSE
 #
 
-- name: Add the Oracle Java repository
-  apt_repository:
-    repo: ppa:webupd8team/java
-    filename: "oracle-java"
-    state: present
-
 - name: Add the git-lfs repository
   apt_repository:
     repo: ppa:git-core/ppa
@@ -25,21 +19,15 @@
   apt:
     update_cache: yes
 
-- name: Autoaccept license for Java
-  debconf:
-    name: 'oracle-java8-installer'
-    question: 'shared/accepted-oracle-license-v1-1'
-    value: 'true'
-    vtype: 'select'
-
-- name: Install Oracle Java as default
+- name: Install OpenJDK Java development
   apt:
     name: "{{ packages }}"
     state: present
   vars:
     packages:
-      - oracle-java8-installer
-      - oracle-java8-set-default
+      - openjdk-8-jdk
+      - openjdk-8-jdk-headless
+      - openjdk-8-jre-headless
 
 - name: Install Maven
   apt:

@@ -64,6 +64,15 @@
     dest: "{{ tomcat_archive_install_path }}/conf/tomcat-users.xml"
   notify: restart tomcat
 
+- name: Deploy setenv.sh
+  template:
+    src: templates/setenv.sh
+    dest: "{{ tomcat_archive_install_path }}/bin/setenv.sh"
+    owner: tomcat
+    group: tomcat
+    mode: 0440
+  notify: restart tomcat
+
 - name: Symlink Tomcat to current version
   file:
     src: "{{ tomcat_archive_install_path }}"
