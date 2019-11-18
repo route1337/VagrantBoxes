@@ -45,7 +45,7 @@ The following tweaks are performed via Ansible provisioning:
 
 Shared Directories (These may not work on Windows)
 ------------
-1. /Scratch will appear on the VM as /scratch
+1. ~/Scratch will appear on the VM as /scratch
 2. ~/Downloads will appear on the VM as /downloads
 
 [Back to main README](../README.md)
