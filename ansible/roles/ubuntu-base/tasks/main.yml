@@ -18,5 +18,3 @@
   when: ansible_distribution == 'Ubuntu'
 - import_tasks: bash.yml
   when: ansible_distribution == 'Ubuntu'
-- import_tasks: rootuser.yml
-  when: ansible_distribution == 'Ubuntu'
