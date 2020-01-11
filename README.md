@@ -1,5 +1,5 @@
 Route 1337 Vagrant Boxes
-==================================
+========================
 This repository contains various Vagrant boxes used for testing and development. The configuration for these boxes has been open sourced for the DevOps community to use. 
 
 Public Boxes
@@ -15,7 +15,7 @@ The following Vagrant boxes are publicly usable without having to seek access to
 Note: All DNS names are valid in the route1337.com internet facing zone file. It's easier than editing your hosts file ;)
 
 Private Boxes
-------------
+-------------
 The following Vagrant boxes require being on certain networks to download because they either contain an OS and/or software that isn't free to distribute.
 
 | Box Name                                                 | DNS Name                             | IP Address    | Vagrant Provider   | Description                                                                                           | Purpose                                                                                             |
@@ -25,10 +25,7 @@ The following Vagrant boxes require being on certain networks to download becaus
 Note: All DNS names are valid in the route1337.com internet facing zone file. It's easier than editing your hosts file ;)
 
 Donate To Support These Vagrant Boxes
-------------
-Route 1337, LLC operates entirely on donations. If you find these Vagrant boxes useful, please consider donating via one of these methods:
+-------------------------------------
+Route 1337, LLC operates entirely on donations. If you find these Vagrant boxes useful, please consider using the GitHub Sponsors button to donate to the people who contributed to this project.
 
-1. Bitcoin: 33nCBCfusCJm6HNPjvs294gNFjx9kTWkaX
-2. Bitcoin Cash: 1DvTTjGoTwZm3bBEPn8x4iKwAATtK7CQMd
-3. Litecoin: ME8jNXXxcQ7sZi77yaMCX5MfCFjhaaafsW
-4. Ethereum: 0x164aCa9c678FC020691feee422aa1CBA2a2F4a1f
+Thank you for your support!
