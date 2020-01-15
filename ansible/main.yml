@@ -16,7 +16,7 @@
   become_user: root
   become_method: sudo
   roles:
-    - ubuntu-base
+    - route1337.ubuntu_base
     - vagrant-specific
 
 - hosts: javadev

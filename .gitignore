@@ -220,6 +220,7 @@ bin/*
 ## Ansible detritus
 #################
 *.retry
+ansible/roles/route1337.*
 
 #############
 ## Generic detritus
