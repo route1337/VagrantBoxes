@@ -12,6 +12,3 @@
 
 - name: Configure SSH for Vagrant
   import_tasks: sshconfig.yml
-- name: Manage the root user for Vagrant
-  import_tasks: rootuser.yml
-
