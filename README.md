@@ -28,7 +28,7 @@ Galaxy Roles
 ------------
 Some roles are remote to this repository in order to permit various levels of licensing, testing, and development.  
 The [requirements.yml](ansible/roles/requirements.yml) file contains all the roles and their source URLs.  
-In order to import the roles from their remotes run `ansible-galaxy install -r ansible/roles/requirements.yml -p ./ansible/roles`
+In order to import or update the roles from their remotes run `./updateRoles.sh`
 
 Donate To Support These Vagrant Boxes
 -------------------------------------

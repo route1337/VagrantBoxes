@@ -18,6 +18,7 @@
   roles:
     - route1337.ubuntu_base
     - route1337.linux_users
+    - route1337.ssh_config
 
 - hosts: javadev
   user: vagrant

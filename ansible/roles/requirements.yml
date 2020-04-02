@@ -3,4 +3,5 @@
 # ubuntu_base
 - src: route1337.ubuntu_base
 - src: route1337.linux_users
+- src: route1337.ssh_config
 
