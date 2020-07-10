@@ -20,14 +20,6 @@
     - route1337.linux_users
     - route1337.ssh_config
 
-- hosts: javadev
-  user: vagrant
-  become: true
-  become_user: root
-  become_method: sudo
-  roles:
-    - javadev
-
 - hosts: dockerregistries
   user: vagrant
   become: true
@@ -44,10 +36,3 @@
   roles:
     - docker-host
 
-- hosts: jenkins
-  user: vagrant
-  become: true
-  become_user: root
-  become_method: sudo
-  roles:
-    - jenkins

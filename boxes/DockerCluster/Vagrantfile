@@ -3,7 +3,7 @@
 #
 # Project:: Vagrant Boxes
 #
-# Copyright 2019, Route 1337, LLC, All Rights Reserved.
+# Copyright 2020, Route 1337, LLC, All Rights Reserved.
 #
 # Maintainers:
 # - Matthew Ahrenstein: matthew@route1337.com
@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define :dockerreg do |dockerreg|
 
-    dockerreg.vm.box = "ubuntu/bionic64"
+    dockerreg.vm.box = "bento/ubuntu-20.04"
     dockerreg.vm.hostname = "dockerreg.vg.route1337.com"
 
     # virtualbox VM parameters (RAM, CPU etc)
@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define :dockerhost1 do |dockerhost1|
 
-    dockerhost1.vm.box = "ubuntu/bionic64"
+    dockerhost1.vm.box = "bento/ubuntu-20.04"
     dockerhost1.vm.hostname = "dockerhost1.vg.route1337.com"
 
     # virtualbox VM parameters (RAM, CPU etc)
@@ -67,7 +67,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define :dockerhost2 do |dockerhost2|
 
-    dockerhost2.vm.box = "ubuntu/bionic64"
+    dockerhost2.vm.box = "bento/ubuntu-20.04"
     dockerhost2.vm.hostname = "dockerhost2.vg.route1337.com"
 
     # virtualbox VM parameters (RAM, CPU etc)

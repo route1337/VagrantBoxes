@@ -8,19 +8,8 @@ The following Vagrant boxes are publicly usable without having to seek access to
 
 | Box Name                                                 | DNS Name                                             | IP Address                                           | Vagrant Provider   | Description                                                                               | Purpose                                                                   |
 |--------------------------------------------------------- |------------------------------------------------------|------------------------------------------------------|--------------------|-------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| [JavaDev](documentation/javadev.md)                      | javadev.vg.route1337.com                             | 192.68.33.30                                         | VirtualBox         | A general purpose Ubuntu 18.04 box with git-lfs and java dev tools                        | General quick linux testing of various things and building WARs           |
+| [Ubuntu](documentation/ubuntu.md)                        | ubuntu.vg.route1337.com                              | 192.68.33.30                                         | VirtualBox         | A general purpose Ubuntu 18.04 box                                                        | General quick linux testing                                               |
 | [Docker Cluster](documentation/dockercluster.md)         | [Multiple Hosts](documentation/dockercluster.md)     | [Multiple Hosts](documentation/dockercluster.md)     | VirtualBox         | 3 boxes that run Ubuntu 18.04. One Docker Registry, and 2 hosts                           | Development and testing of Docker containers and/or Docker services       |
-| [Jenkins](documentation/jenkins.md)                      | jenkins.vg.route1337.com                             | 192.68.33.34                                         | VirtualBox         | The latest Jenkins LTS running on Ubuntu 18.04 with nginx proxying it to port 80          | Testing Jenkins plugins and integrations                                  |
-
-Note: All DNS names are valid in the route1337.com internet facing zone file. It's easier than editing your hosts file ;)
-
-Private Boxes
--------------
-The following Vagrant boxes require being on certain networks to download because they either contain an OS and/or software that isn't free to distribute.
-
-| Box Name                                                 | DNS Name                             | IP Address    | Vagrant Provider   | Description                                                                                           | Purpose                                                                                             |
-|----------------------------------------------------------|--------------------------------------|---------------|--------------------|-------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| [DeDRM](documentation/dedrm.md)                          | dedrm.vg.route1337.com               | 192.168.33.50 | VirtualBox         | A Windows 8.1 box with GUI that contains tools for stripping DRM from iTunes videos and Kindle eBooks | Removing DRM from content so it can be viewed on more than one brand of products                    |
 
 Note: All DNS names are valid in the route1337.com internet facing zone file. It's easier than editing your hosts file ;)
 
