@@ -15,3 +15,6 @@
 - src: route1337.linux_users
 - src: route1337.ssh_config
 
+# docker hosts
+- src: route1337.docker_host
+
