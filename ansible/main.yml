@@ -2,7 +2,7 @@
 #
 # Project:: Vagrant Boxes
 #
-# Copyright 2019, Route 1337, LLC, All Rights Reserved.
+# Copyright 2020, Route 1337, LLC, All Rights Reserved.
 #
 # Maintainers:
 # - Matthew Ahrenstein: matthew@route1337.com
@@ -16,16 +16,9 @@
   become_user: root
   become_method: sudo
   roles:
-    - ubuntu-base
-    - vagrant-specific
-
-- hosts: javadev
-  user: vagrant
-  become: true
-  become_user: root
-  become_method: sudo
-  roles:
-    - javadev
+    - route1337.ubuntu_base
+    - route1337.linux_users
+    - route1337.ssh_config
 
 - hosts: dockerregistries
   user: vagrant
@@ -33,6 +26,7 @@
   become_user: root
   become_method: sudo
   roles:
+    - route1337.docker_host
     - docker-registry
 
 - hosts: dockerhosts
@@ -41,12 +35,4 @@
   become_user: root
   become_method: sudo
   roles:
-    - docker-host
-
-- hosts: jenkins
-  user: vagrant
-  become: true
-  become_user: root
-  become_method: sudo
-  roles:
-    - jenkins
+    - route1337.docker_host

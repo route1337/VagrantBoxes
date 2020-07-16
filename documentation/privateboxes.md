@@ -1,5 +1,5 @@
 Route 1337 Private Vagrant Boxes
-==========================================
+================================
 This repository contains a few Vagrant boxes that require access to boxes stored in S3 with a bucket policy restricting access by IP. Unfortunately this is because they contain an operating system and/or software that is not free to distribute.
 They are included included in this repo because they are used quite regularly by Route 1337 team members and we wanted to keep all of the boxes in one place.
 
@@ -10,7 +10,7 @@ At this time Route 1337 can only provide access to these boxes if you are workin
 1. N/A
   
 Restricted Boxes 
-------------
+----------------
 The following boxes will not be shared with anyone due to their high potential for abuse.
 
 1. DeDRM

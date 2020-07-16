@@ -1,4 +1,4 @@
-[javadev]
+[standardubuntu]
 192.168.33.30
 
 [dockerregistries]
@@ -8,17 +8,13 @@
 192.168.33.32
 192.168.33.33
 
-[jenkins]
-192.168.33.34
-
 [dockercluster:children]
 dockerregistries
 dockerhosts
 
 [ubuntu:children]
-javadev
+standardubuntu
 dockercluster
-jenkins
 
 [linux:children]
 ubuntu

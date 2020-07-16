@@ -1,0 +1,39 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+#
+# Project:: Vagrant Boxes
+#
+# Copyright 2020, Route 1337, LLC, All Rights Reserved.
+#
+# Maintainers:
+# - Matthew Ahrenstein: matthew@route1337.com
+#
+# See LICENSE
+#
+
+Vagrant.configure("2") do |config|
+
+  config.vm.define :ubuntu do |ubuntu|
+
+    ubuntu.vm.box = "bento/ubuntu-20.04"
+    ubuntu.vm.hostname = "ubuntu.vg.route1337.com"
+    ubuntu.vm.synced_folder "~/Scratch/", "/scratch"
+    ubuntu.vm.synced_folder "~/Downloads/", "/downloads"
+
+    # VMware VM parameters (RAM, CPU etc)
+    ubuntu.vm.provider "virtualbox" do |vb|
+      vb.memory = 4096
+      vb.cpus = 2
+    end
+
+    # Private networking - so machines can speak to each other:
+    ubuntu.vm.network :private_network, ip: "192.168.33.30"
+
+    # Provision with Ansible
+    ubuntu.vm.provision :ansible do |ansible|
+      ansible.inventory_path = "../../ansible/vagrant.inv"
+      ansible.playbook = "../../ansible/main.yml"
+      ansible.limit = "192.168.33.30"
+    end
+  end
+end

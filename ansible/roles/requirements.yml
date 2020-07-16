@@ -10,8 +10,10 @@
 # See LICENSE
 #
 
-# Configure a Docker Registry host
+# ubuntu_base
+- src: route1337.ubuntu_base
+- src: route1337.linux_users
+- src: route1337.ssh_config
 
-- name: Install Docker Registry
-  import_tasks: registry.yml
-  when: ansible_distribution == 'Ubuntu'
+# docker hosts
+- src: route1337.docker_host
