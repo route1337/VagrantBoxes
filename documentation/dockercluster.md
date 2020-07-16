@@ -8,7 +8,7 @@ Box Configuration
 |:----------------:|:-------------:|:-----------------------------------:|:----------------:|:---:|:----:|
 | Ubuntu 20.04 x64 | 192.168.33.31 | dockerreg.vg.route1337.com          | VirtualBox       | 1GB | 1    |
 | Ubuntu 20.04 x64 | 192.168.33.32 | dockerhost1.vg.route1337.com        | VirtualBox       | 3GB | 2    |
-| Ubuntu 18.04 x64 | 192.168.33.33 | dockerhost2.vg.route1337.com        | VirtualBox       | 3GB | 2    |
+| Ubuntu 20.04 x64 | 192.168.33.33 | dockerhost2.vg.route1337.com        | VirtualBox       | 3GB | 2    |
 
 Ansible roles
 -------------
