@@ -8,9 +8,6 @@
 192.168.33.32
 192.168.33.33
 
-[jenkins]
-192.168.33.34
-
 [dockercluster:children]
 dockerregistries
 dockerhosts
@@ -18,7 +15,6 @@ dockerhosts
 [ubuntu:children]
 standardubuntu
 dockercluster
-jenkins
 
 [linux:children]
 ubuntu

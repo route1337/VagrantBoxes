@@ -10,7 +10,7 @@
 # See LICENSE
 #
 
-# Configure the actual Docker Registry
+# Configure the Docker Registry
 
 - name: Register registry storage dir
   stat:
@@ -63,6 +63,7 @@
 - name: Pull Docker Registry from Docker Hub
   docker_image:
     name: registry
+    source: pull
 
 - name: Ensure Docker Registry is running
   docker_container:

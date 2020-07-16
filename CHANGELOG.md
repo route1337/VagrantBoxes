@@ -13,8 +13,7 @@ We're starting to track changes now.
 5. Jenkins box removed
 6. Ansible now uses Galaxy for some roles
 7. The "master" branch in GitHub is now called "main" 
-8. Vagrantfiles and configs for private boxes will no longer be kept in a public repo
-9. Updated Ubuntu based boxes to 20.04
+8. Updated Ubuntu based boxes to 20.04
     1. Moved from Ubuntu's official boxes to Chef's bento boxes due to the official 20.04 being broken
 
 Return to [README](README.md)

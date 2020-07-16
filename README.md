@@ -13,6 +13,16 @@ The following Vagrant boxes are publicly usable without having to seek access to
 
 Note: All DNS names are valid in the route1337.com internet facing zone file. It's easier than editing your hosts file ;)
 
+Private Boxes
+-------------
+The following Vagrant boxes require being on certain networks to download because they either contain an OS and/or software that isn't free to distribute.
+
+| Box Name                                                 | DNS Name                             | IP Address    | Vagrant Provider   | Description                                                                                           | Purpose                                                                                             |
+|----------------------------------------------------------|--------------------------------------|---------------|--------------------|-------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| [DeDRM](documentation/dedrm.md)                          | dedrm.vg.route1337.com               | 192.168.33.50 | VirtualBox         | A Windows 8.1 box with GUI that contains tools for stripping DRM from iTunes videos and Kindle eBooks | Removing DRM from content so it can be viewed on more than one brand of products                    |
+
+Note: All DNS names are valid in the route1337.com internet facing zone file. It's easier than editing your hosts file ;)
+
 Galaxy Roles
 ------------
 Some roles are remote to this repository in order to permit various levels of licensing, testing, and development.  

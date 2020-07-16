@@ -26,6 +26,7 @@
   become_user: root
   become_method: sudo
   roles:
+    - route1337.docker_host
     - docker-registry
 
 - hosts: dockerhosts
@@ -35,4 +36,3 @@
   become_method: sudo
   roles:
     - route1337.docker_host
-
