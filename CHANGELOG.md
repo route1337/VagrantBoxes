@@ -2,6 +2,12 @@ Route 1337 Vagrant Boxes: Changelog
 ===================================
 A list of all the changes made to this repo and the role it contains
 
+Version 1.5.1
+-------------
+
+1. Updating IP addresses of VirtualBox boxes
+2. Updating GitHub Sponsors details
+
 Version 1.5.0
 -------------
 We're starting to track changes now.
