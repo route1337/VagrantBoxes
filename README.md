@@ -31,6 +31,6 @@ In order to import or update the roles from their remotes run `./updateRoles.sh`
 
 Donate To Support These Vagrant Boxes
 -------------------------------------
-Route 1337, LLC operates entirely on donations. If you find these Vagrant boxes useful, please consider using the GitHub Sponsors button to donate to the people who contributed to this project.
+Route 1337, LLC operates entirely on donations. If you find these Vagrant boxes useful, please consider using the GitHub Sponsors button to show your continued support.
 
 Thank you for your support!

@@ -1,12 +1,12 @@
 [standardubuntu]
-192.168.33.30
+192.168.56.30
 
 [dockerregistries]
-192.168.33.31
+192.168.56.31
 
 [dockerhosts]
-192.168.33.32
-192.168.33.33
+192.168.56.32
+192.168.56.33
 
 [dockercluster:children]
 dockerregistries
