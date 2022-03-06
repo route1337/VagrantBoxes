@@ -27,13 +27,13 @@ Vagrant.configure("2") do |config|
     end
 
     # Private networking - so machines can speak to each other:
-    dockerreg.vm.network :private_network, ip: "192.168.33.31"
+    dockerreg.vm.network :private_network, ip: "192.168.56.31"
 
     # Provision with Ansible at the end of the deploy
     dockerreg.vm.provision :ansible do |ansible|
       ansible.inventory_path = "../../ansible/vagrant.inv"
       ansible.playbook = "../../ansible/main.yml"
-      ansible.limit = "192.168.33.31"
+      ansible.limit = "192.168.56.31"
     end
 
   end
@@ -52,13 +52,13 @@ Vagrant.configure("2") do |config|
     end
 
     # Private networking - so machines can speak to each other:
-    dockerhost1.vm.network :private_network, ip: "192.168.33.32"
+    dockerhost1.vm.network :private_network, ip: "192.168.56.32"
 
     # Provision with Ansible at the end of the deploy
     dockerhost1.vm.provision :ansible do |ansible|
       ansible.inventory_path = "../../ansible/vagrant.inv"
       ansible.playbook = "../../ansible/main.yml"
-      ansible.limit = "192.168.33.32"
+      ansible.limit = "192.168.56.32"
     end
 
   end
@@ -77,13 +77,13 @@ Vagrant.configure("2") do |config|
     end
 
     # Private networking - so machines can speak to each other:
-    dockerhost2.vm.network :private_network, ip: "192.168.33.33"
+    dockerhost2.vm.network :private_network, ip: "192.168.56.33"
 
     # Provision with Ansible at the end of the deploy
     dockerhost2.vm.provision :ansible do |ansible|
       ansible.inventory_path = "../../ansible/vagrant.inv"
       ansible.playbook = "../../ansible/main.yml"
-      ansible.limit = "192.168.33.33"
+      ansible.limit = "192.168.56.33"
     end
   end
 end
